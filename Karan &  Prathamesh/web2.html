@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spice Villa - Authentic Indian Cuisine</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff5e6;
+      color: #4b2e05;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #b7410e;
+      color: #fff3e0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 5px rgba(183, 65, 14, 0.7);
+    }
+
+    header h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #fff3e0;
+      text-decoration: none;
+      margin-left: 1.8rem;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd54f;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1604908810711-9c244f9c6836?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #27f901;
+      text-shadow: 2px 2px 8px rgba(226, 0, 0, 0.8);
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      font-style: italic;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #b7410e;
+      font-weight: 700;
+      font-family: 'Georgia', serif;
+      letter-spacing: 1.5px;
+    }
+
+    /* Menu Grid */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-item {
+      background-color: #fff3e0;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(183, 65, 14, 0.2);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(183, 65, 14, 0.4);
+    }
+
+    .menu-item h3 {
+      color: #b7410e;
+      margin-bottom: 0.4rem;
+      font-family: 'Georgia', serif;
+    }
+
+    .menu-item p {
+      font-style: italic;
+      color: #6e4b19;
+      margin-bottom: 1rem;
+    }
+
+    .menu-item span {
+      font-weight: 700;
+      color: #d84315;
+      font-size: 1.1rem;
+    }
+
+    /* About section */
+    .about p {
+      font-size: 1.1rem;
+      color: #6e4b19;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-family: 'Georgia', serif;
+    }
+
+    /* Contact Form */
+    form {
+      background-color: #fff3e0;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(183, 65, 14, 0.3);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: #b7410e;
+      font-family: 'Georgia', serif;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border: 2px solid #b7410e;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #d84315;
+    }
+
+    button {
+      background-color: #b7410e;
+      color: #fff3e0;
+      padding: 0.9rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: 'Georgia', serif;
+    }
+
+    button:hover {
+      background-color: #d84315;
+    }
+
+    footer {
+      background-color: #b7410e;
+      color: #fff3e0;
+      text-align: center;
+      padding: 1rem 2rem;
+      margin-top: 3rem;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spice Villa</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" role="banner" aria-label="Welcome Banner">
+    <h2>Welcome to Pranot Villa</h2>
+    <p>Experience authentic Indian Thai Massage from the heart of India to your plate.</p>
+  </section>
+
+  <section id="menu" aria-label="Menu Section">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="menu">
+      <article class="menu-item">
+        <h3>Butter Chicken</h3>
+        <p>Succulent chicken cooked in creamy tomato gravy with aromatic spices.</p>
+        <span>₹350</span>
+      </article>
+      <article class="menu-item">
+        <h3>Paneer Tikka</h3>
+        <p>Grilled cottage cheese cubes marinated in yogurt and spices.</p>
+        <span>₹280</span>
+      </article>
+      <article class="menu-item">
+        <h3>Dal Makhani</h3>
+        <p>Slow-cooked black lentils in buttery tomato sauce with cream.</p>
+        <span>₹250</span>
+      </article>
+      <article class="menu-item">
+        <h3>Garlic Naan</h3>
+        <p>Soft leavened flatbread topped with fresh garlic and coriander.</p>
+        <span>₹70</span>
+      </article>
+      <article class="menu-item">
+        <h3>Chole Bhature</h3>
+        <p>Spiced chickpeas served with fluffy deep-fried bread.</p>
+        <span>₹220</span>
+      </article>
+      <article class="menu-item">
+        <h3>Mango Lassi</h3>
+        <p>Refreshing yogurt drink blended with ripe mangoes and cardamom.</p>
+        <span>₹120</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-label="About Section">
+    <h2 class="section-title">About Spice Villa</h2>
+    <p>
+      At Spice Villa, we bring the rich culinary heritage of India to your table. Our chefs craft every dish using traditional recipes passed down through generations, ensuring an authentic taste with every bite. From vibrant street food to royal delicacies, join us on a flavorful journey celebrating India’s diverse food culture.
+    </p>
+  </section>
+
+  <section id="contact" aria-label="Contact Section">
+    <h2 class="section-title">Contact Us</h2>
+    <form id="contactForm" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message here" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Spice Villa. All rights reserved.
+  </footer>
+
+  <script>
+    // Contact form validation and handling
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      alert(`Thank you for reaching out, ${name}! We will get back to you soon.`);
+      form.reset();
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+  </script>
+</body>
+</html>
